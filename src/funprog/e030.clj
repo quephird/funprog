@@ -1,7 +1,7 @@
-(ns funprog.e029
+(ns funprog.e030
   (:use quil.core))
 
-(def r (atom 0.0))
+(def θ (atom 0.0))
 
 (defn setup []
   (background 255)
@@ -15,14 +15,14 @@
 
   (doseq [[x y] [[100 100] [400 100] [100 400] [400 400]]]
     (translate x y)
-    (rotate @r)
+    (rotate @θ)
     (rect 0 0 100 100)
     (reset-matrix))
 
   (swap! r + 0.02))
 
 (sketch
-  :title "exercise 29"
+  :title "exercise 30"
   :setup setup
   :draw draw
   :size [500 500]
